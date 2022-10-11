@@ -68,7 +68,7 @@ jobs:
           #Set artifact name
           name: artifact
           #From this path
-          path: target/data-0.0.1-SNAPSHOT.jar    
+          path: target/openapi-spring-1.22.1.jar   
 #Deploy's job
   deploy:
     #Depends on build's job
@@ -94,4 +94,4 @@ jobs:
           environment_name: Swkomproject-env
           version_label: ${{github.SHA}}
           region: us-east-1
-          deployment_package: data-0.0.1-SNAPSHOT.jar
+          deployment_package: openapi-spring-1.22.1.jar
