@@ -5,7 +5,7 @@
  */
 package at.fhtw.swen3.services;
 
-import at.fhtw.swen3.persistence.Error;
+import at.fhtw.swen3.services.dto.Error;
 import at.fhtw.swen3.services.dto.NewParcelInfo;
 import at.fhtw.swen3.services.dto.Parcel;
 import at.fhtw.swen3.services.dto.TrackingInformation;

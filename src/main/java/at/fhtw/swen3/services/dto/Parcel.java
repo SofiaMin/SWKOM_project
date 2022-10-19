@@ -1,7 +1,7 @@
 package at.fhtw.swen3.services.dto;
 
 import java.util.Objects;
-import at.fhtw.swen3.persistence.Recipient;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
