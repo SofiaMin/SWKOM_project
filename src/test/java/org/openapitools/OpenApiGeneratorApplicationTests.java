@@ -6,9 +6,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest(classes = OpenApiGeneratorApplicationTests.class)
 class OpenApiGeneratorApplicationTests {
 
-    /*
     @Test
     void contextLoads() {
-    }*/
+    }
 
 }

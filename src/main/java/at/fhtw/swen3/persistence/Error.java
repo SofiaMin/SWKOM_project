@@ -1,43 +1,48 @@
-package at.fhtw.swen3.services.dto;
+package at.fhtw.swen3.persistence;
 
+import java.net.URI;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.time.OffsetDateTime;
+import javax.validation.Valid;
 import javax.validation.constraints.*;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 
+import java.util.*;
 import javax.annotation.Generated;
 
 /**
- * NewParcelInfo
+ * Error
  */
 
-@JsonTypeName("newParcelInfo")
+@JsonTypeName("error")
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-09-24T20:20:57.730918Z[Etc/UTC]")
-public class NewParcelInfo {
+public class Error {
 
-  @JsonProperty("trackingId")
-  private String trackingId;
+  @JsonProperty("errorMessage")
+  private String errorMessage;
 
-  public NewParcelInfo trackingId(String trackingId) {
-    this.trackingId = trackingId;
+  public Error errorMessage(String errorMessage) {
+    this.errorMessage = errorMessage;
     return this;
   }
 
   /**
-   * The tracking ID of the parcel. 
-   * @return trackingId
+   * The error message.
+   * @return errorMessage
   */
-  @Pattern(regexp = "^[A-Z0-9]{9}$") 
-  @Schema(name = "trackingId", example = "PYJRB4HZ6", description = "The tracking ID of the parcel. ", required = false)
-  public String getTrackingId() {
-    return trackingId;
+  @NotNull 
+  @Schema(name = "errorMessage", description = "The error message.", required = true)
+  public String getErrorMessage() {
+    return errorMessage;
   }
 
-  public void setTrackingId(String trackingId) {
-    this.trackingId = trackingId;
+  public void setErrorMessage(String errorMessage) {
+    this.errorMessage = errorMessage;
   }
 
   @Override
@@ -48,20 +53,20 @@ public class NewParcelInfo {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    NewParcelInfo newParcelInfo = (NewParcelInfo) o;
-    return Objects.equals(this.trackingId, newParcelInfo.trackingId);
+    Error error = (Error) o;
+    return Objects.equals(this.errorMessage, error.errorMessage);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(trackingId);
+    return Objects.hash(errorMessage);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class NewParcelInfo {\n");
-    sb.append("    trackingId: ").append(toIndentedString(trackingId)).append("\n");
+    sb.append("class Error {\n");
+    sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
     sb.append("}");
     return sb.toString();
   }
