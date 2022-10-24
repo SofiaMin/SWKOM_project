@@ -33,20 +33,6 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                    <generatedSourcesDirectory>${project.build.directory}
-                        /generated-sources/</generatedSourcesDirectory>
-                    <annotationProcessors>
-                        <annotationProcessor>
-                            com.baeldung.annotation.processor.BuilderProcessor
-                        </annotationProcessor>
-                    </annotationProcessors>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>org.mapstruct</groupId>
-                            <artifactId>mapstruct-processor</artifactId>
-                            <version>1.4.2.Final</version>
-                        </path>
-                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
         </plugins>
