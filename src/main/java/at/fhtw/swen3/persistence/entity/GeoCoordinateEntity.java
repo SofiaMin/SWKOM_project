@@ -4,18 +4,14 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@Entity(name = "GeoCoordinate")
-@NoArgsConstructor
+@Entity(name = "geo_coordinate")
 @Getter
 @Setter
-@ToString
-@EqualsAndHashCode
 public class GeoCoordinateEntity {
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
-    private long id;
-    @Column
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
+    private Long id;
     private Double lat;
-    @Column
     private Double lon;
 }

@@ -1,21 +1,15 @@
 package at.fhtw.swen3.persistence.entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
 
-@Entity(name = "Truck")
-@NoArgsConstructor
+@Entity(name = "truck")
 @Getter
 @Setter
-@ToString
-@EqualsAndHashCode
-public class TruckEntity {
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
-    private long id;
-    @Column
+public class TruckEntity extends HopEntity{
     private String regionGeoJson;
-    @Column
     private String numberPlate;
 }
+

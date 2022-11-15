@@ -1,31 +1,29 @@
 package at.fhtw.swen3.persistence.entity;
 
-import lombok.*;
-
 import javax.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
-@Entity(name = "Hop")
-@NoArgsConstructor
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+@Entity(name = "hop")
 @Getter
 @Setter
-@ToString(exclude = {"locationCoordinates"})
-@EqualsAndHashCode(exclude = {"locationCoordinates"})
 public class HopEntity {
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
-    private long id;
-    @Column
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
+    private Long id;
     private String hopType;
-    @Column
+    @Pattern(regexp = "^[A-Za-zÄÖÜäöüß0-9\\s\\-]+$")
     private String code;
-    @Column
     private String description;
-    @Column
     private Integer processingDelayMins;
-    @Column
     private String locationName;
-    @Column
     @OneToOne
-    @JoinColumn(name="fk_locationCoordinates")
+    @NotNull(message = "GeoCoordinates cannot be null")
     private GeoCoordinateEntity locationCoordinates;
+
+
 }

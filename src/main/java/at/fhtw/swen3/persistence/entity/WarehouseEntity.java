@@ -1,24 +1,24 @@
 package at.fhtw.swen3.persistence.entity;
-
-import lombok.*;
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(name = "Warehouse")
-@NoArgsConstructor
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "warehouse")
 @Getter
 @Setter
-@ToString(exclude = {"nextHops"})
-@EqualsAndHashCode(exclude = {"nextHops"})
-public class WarehouseEntity {
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
-    private long id;
-    @Column
+public class WarehouseEntity extends HopEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
+    private Long id;
     private Integer level;
-    @Column
-    @OneToMany(mappedBy = "warehouse")
+    @OneToMany
     private List<WarehouseNextHopsEntity> nextHops = new ArrayList<>();
-
 }
+
+
