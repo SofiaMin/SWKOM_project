@@ -3,26 +3,53 @@ package at.fhtw.swen3.persistence.entity;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.*;
 import javax.validation.constraints.Pattern;
 
+@Entity
+@Table(name = "recipient")
 @Getter
 @Setter
 public class RecipientEntity {
-
-    @Pattern(regexp = "^[[:upper:]][[:lower:]]*ß*[[:lower:]]*\\/*-*\\d*\\/*[[:lower:]]*$")
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
+    private Long id;
+    @Pattern(regexp = "^[A-ZÄÖÜ][a-zäöüß]+\\.?\\s?([A-ZÄÖÜ][a-zäöüß]+)*$")
     private String name;
-
-    @Pattern(regexp = "^[[:upper:]][[:lower:]]*ß*[[:lower:]]*\\s\\d+\\/*[[:alpha:]]*\\d*\\/*\\d*$")
+    @Pattern(regexp = "[A-Za-zÄÖÜäöüß]+\\s[0-9A-Za-zÄÖÜäöüß/\\s]+")
     private String street;
-
-    @Pattern(regexp = "^A-\\d\\d\\d\\d$")
+    @Pattern(regexp = "^[AD]-\\d{4}$")
     private String postalCode;
-
-    @Pattern(regexp = "^[[:upper:]][[:lower:]]*ß*[[:lower:]]*\\/*-*\\d*\\/*[[:lower:]]*$")
+    @Pattern(regexp = "^[A-ZÄÖÜ][a-zäöüß]+\\.?\\s?([A-ZÄÖÜ][a-zäöüß]+)*$")
     private String city;
-
-    @Pattern(regexp = "[ÖÄÜA-Z][[:lower:]]+$")
     private String country;
 
+    /**
+     * Constructor-like functionality to build an Object
+     */
+    public RecipientEntity name(String name) {
+        this.name = name;
+        return this;
+    }
 
+    public RecipientEntity street(String street) {
+        this.street = street;
+        return this;
+    }
+
+    public RecipientEntity postalCode(String postalCode) {
+        this.postalCode = postalCode;
+        return this;
+    }
+
+    public RecipientEntity city(String city) {
+        this.city = city;
+        return this;
+    }
+
+    public RecipientEntity country(String country) {
+        this.country = country;
+        return this;
+    }
 }

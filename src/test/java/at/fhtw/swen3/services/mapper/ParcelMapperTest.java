@@ -1,64 +1,68 @@
 package at.fhtw.swen3.services.mapper;
 
-import at.fhtw.swen3.OpenApiGeneratorApplication;
 import at.fhtw.swen3.persistence.entity.ParcelEntity;
-import at.fhtw.swen3.services.dto.*;
+import at.fhtw.swen3.persistence.entity.RecipientEntity;
+import at.fhtw.swen3.services.dto.Parcel;
+import at.fhtw.swen3.services.dto.Recipient;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.util.LinkedList;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-@SpringBootTest(classes = OpenApiGeneratorApplication.class)
 class ParcelMapperTest {
-
     @Test
-    void testParcelDtoToEntity() {
-        Recipient sender = new Recipient();
-        sender.setStreet("Zieglergasse 21-23");
-        sender.setPostalCode("A-1070");
-        sender.setCity("Wien");
-        sender.setCountry("Österreich");
-        sender.setName("GTVS Neubau");
+    void dtoToEntity() {
+        //List<HopArrivalEntity> hopArrivals = new ArrayList<>().add(new HopArrivalEntity(123L, "hallo", ));
+        final Parcel parcel = new Parcel()
+                .weight(2.0f)
+                .sender(new Recipient()
+                        .name("Herbert")
+                        .city("Vienna"))
+                .recipient(new Recipient()
+                        .name("Gustav")
+                        .city("Berlin")
+                );
 
-        Recipient recipient = new Recipient();
-        recipient.setName("Folic");
-        recipient.setStreet("Neubaugürtel 52/14");
-        recipient.setCity("Wien");
-        recipient.setCountry("Österreich");
-        recipient.setPostalCode("A-1070");
-
-        HopArrival visitedHop = new HopArrival();
-        visitedHop.setCode("WTTA012");
-        visitedHop.setDescription("Truck in Oberlaa Stadt");
-
-        HopArrival futureHop = new HopArrival();
-        futureHop.setCode("WTTA014");
-        futureHop.setDescription("Truck in Altmannsdorf");
-
-        Parcel parcel = new Parcel();
-        parcel.setSender(sender);
-        parcel.setRecipient(recipient);
-        parcel.setWeight(5.0F);
-
-        NewParcelInfo newParcelInfo = new NewParcelInfo();
-        newParcelInfo.setTrackingId("123456");
-
-        LinkedList<HopArrival> visitedHops = new LinkedList<>();
-        visitedHops.add(visitedHop);
-
-        LinkedList<HopArrival> futureHops = new LinkedList<>();
-        visitedHops.add(futureHop);
-
-        TrackingInformation trackingInformation = new TrackingInformation();
-        trackingInformation.setState(TrackingInformation.StateEnum.PICKUP);
-        trackingInformation.setFutureHops(futureHops);
-        trackingInformation.setVisitedHops(visitedHops);
-
-        ParcelEntity parcelEntity = ParcelMapper.INSTANCE.dtoToEntity(parcel, newParcelInfo, trackingInformation);
+        ParcelEntity parcelEntity = ParcelMapper.INSTANCE.dtoToEntity(parcel);
         assertEquals(parcel.getWeight(), parcelEntity.getWeight());
-
+        assertEquals(parcel.getSender().getName(), parcelEntity.getSender().getName());
+        assertEquals(parcel.getSender().getCity(), parcelEntity.getSender().getCity());
     }
 
+    @Test
+    void dtoToEntityEmptyStreet() {
+        final Parcel parcel = new Parcel()
+                .weight(2.0f)
+                .sender(new Recipient()
+                        .name("Herbert")
+                        .city("Vienna"))
+                .recipient(new Recipient()
+                        .name("Gustav")
+                        .city("Berlin")
+                );
+
+        ParcelEntity parcelEntity = ParcelMapper.INSTANCE.dtoToEntity(parcel);
+        assertNull(parcelEntity.getSender().getStreet());
+    }
+
+    @Test
+    void entityToDto() {
+        final ParcelEntity parcelEntity = new ParcelEntity()
+                .weight(2.0f)
+                .sender(new RecipientEntity()
+                        .name("Herbert")
+                        .city("Vienna"))
+                .recipient(new RecipientEntity()
+                        .name("Gustav")
+                        .city("Berlin")
+                );
+
+        Parcel parcel = ParcelMapper.INSTANCE.entityToDto(parcelEntity);
+
+        assertEquals(parcelEntity.getWeight(), parcel.getWeight());
+        assertEquals(parcelEntity.getSender().getCity(), parcel.getSender().getCity());
+        assertNull(parcel.getSender().getStreet());
+    }
 }
