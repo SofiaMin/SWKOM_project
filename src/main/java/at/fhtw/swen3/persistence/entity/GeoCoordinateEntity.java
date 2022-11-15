@@ -4,9 +4,11 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@Entity(name = "geo_coordinate")
+@Entity
+@Table(name = "geo_coordinate")
 @Getter
 @Setter
+@NoArgsConstructor
 public class GeoCoordinateEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

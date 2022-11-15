@@ -7,7 +7,8 @@ import lombok.Setter;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
-@Entity(name = "hop")
+@Entity
+@Table(name = "hop")
 @Getter
 @Setter
 public class HopEntity {

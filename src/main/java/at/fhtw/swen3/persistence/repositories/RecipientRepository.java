@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-@Repository
+
 public interface RecipientRepository extends JpaRepository<RecipientEntity, Long> {
     Optional<RecipientEntity> findById(Long id);
 }

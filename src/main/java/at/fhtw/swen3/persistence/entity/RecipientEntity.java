@@ -6,7 +6,8 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
 
-@Entity(name = "recipient")
+@Entity
+@Table(name = "recipient")
 @Getter
 @Setter
 public class RecipientEntity {
