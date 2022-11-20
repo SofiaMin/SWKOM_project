@@ -13,10 +13,29 @@ jobs:
     name: Master CI
     #Run on Ubuntu using the latest version
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgis/postgis:10-2.5
+        env:
+          # must specify password for PG Docker container image, see: https://registry.hub.docker.com/_/postgres?tab=description&page=1&name=10
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: swkom
+        ports:
+          - 5432:5432
+        # needed because the postgres container does not provide a healthcheck
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+
     #Job's steps
     steps:
       #Check-out your repository under $GITHUB_WORKSPACE, so your workflow can access it
       - uses: actions/checkout@v3
+
+      - name: Import DB seed data
+        run: psql -d postgresql://postgres@localhost/your_test_db_name -f your_seed_data.sql
+        working-directory: ./test/data
+        env:
+          PGPASSWORD: postgres
       #Set up JDK 17
       - name: Set up JDK
         uses: actions/setup-java@v3
@@ -34,6 +53,8 @@ jobs:
       #Run Tests
       - name: Run Tests
         run: mvn -B test
+        env:
+          CI_DB_URL: postgresql://postgres:postgres@localhost:5432/swkom
   #Build's job
   build:
     needs: tests
@@ -90,8 +111,8 @@ jobs:
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_session_token: ${{ secrets.AWS_SESSION_TOKEN }}
           use_existing_version_if_available: false
-          application_name: swkom_project
-          environment_name: Swkomproject-env
+          application_name: swkom
+          environment_name: Swkom-env
           version_label: ${{github.SHA}}
           region: us-east-1
           deployment_package: openapi-spring-1.22.1.jar
