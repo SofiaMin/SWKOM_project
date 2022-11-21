@@ -2,21 +2,20 @@ package at.fhtw.swen3.persistence.entity;
 
 import javax.persistence.*;
 
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
-
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import java.time.OffsetDateTime;
 
+@Builder
 @Entity
 @Table(name = "hop_arrival")
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class HopArrivalEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

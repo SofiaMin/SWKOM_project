@@ -7,17 +7,16 @@ import javax.validation.constraints.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
+@Builder
 @Entity
 @Table(name = "parcel")
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
+@AllArgsConstructor
 public class ParcelEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

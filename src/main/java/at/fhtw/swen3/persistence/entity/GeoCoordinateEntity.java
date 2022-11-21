@@ -4,10 +4,12 @@ import lombok.*;
 
 import javax.persistence.*;
 
+@Builder
 @Entity
 @Table(name = "geo_coordinate")
 @Getter
 @Setter
+@AllArgsConstructor
 @NoArgsConstructor
 public class GeoCoordinateEntity {
     @Id
