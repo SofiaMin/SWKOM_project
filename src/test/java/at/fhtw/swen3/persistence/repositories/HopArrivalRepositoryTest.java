@@ -11,7 +11,7 @@ import java.time.OffsetDateTime;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-@TestPropertySource("src/test/resources/application-test.properties")
+@TestPropertySource("/application-test.properties")
 class HopArrivalRepositoryTest {
 
     @Autowired
