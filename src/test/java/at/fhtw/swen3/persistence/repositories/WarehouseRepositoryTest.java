@@ -13,7 +13,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-@TestPropertySource("/application-test.properties")
 class WarehouseRepositoryTest {
     /*@Autowired
     private WarehouseRepository repo;
