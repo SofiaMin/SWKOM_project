@@ -1,4 +1,4 @@
-package at.fhtw.swen3.persistence.entity;
+package at.fhtw.swen3.persistence.entities;
 
 import lombok.*;
 
@@ -17,13 +17,13 @@ public class RecipientEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
-    @Pattern(regexp = "^[A-ZÄÖÜ][a-zäöüß]+\\.?\\s?([A-ZÄÖÜ][a-zäöüß]+)*$")
+    //@Pattern(regexp = "^[A-ZÄÖÜ][a-zäöüß]+\\.?\\s?([A-ZÄÖÜ][a-zäöüß]+)*$")
     private String name;
-    @Pattern(regexp = "[A-Za-zÄÖÜäöüß]+\\s[0-9A-Za-zÄÖÜäöüß/\\s]+")
+    //@Pattern(regexp = "[A-Za-zÄÖÜäöüß]+\\s[0-9A-Za-zÄÖÜäöüß/\\s]+")
     private String street;
-    @Pattern(regexp = "^[AD]-\\d{4}$")
+    //@Pattern(regexp = "^[AD]-\\d{4}$")
     private String postalCode;
-    @Pattern(regexp = "^[A-ZÄÖÜ][a-zäöüß]+\\.?\\s?([A-ZÄÖÜ][a-zäöüß]+)*$")
+    //@Pattern(regexp = "^[A-ZÄÖÜ][a-zäöüß]+\\.?\\s?([A-ZÄÖÜ][a-zäöüß]+)*$")
     private String city;
     private String country;
 

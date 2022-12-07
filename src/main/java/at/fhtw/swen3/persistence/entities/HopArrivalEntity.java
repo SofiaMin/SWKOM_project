@@ -1,4 +1,4 @@
-package at.fhtw.swen3.persistence.entity;
+package at.fhtw.swen3.persistence.entities;
 
 import javax.persistence.*;
 
@@ -21,7 +21,7 @@ public class HopArrivalEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
-    @Pattern(regexp = "^[A-Za-zÄÖÜäöüß0-9\\s\\-]+$")
+    //@Pattern(regexp = "^[A-Za-zÄÖÜäöüß0-9\\s\\-]+$")
     private String code;
     private String description;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)

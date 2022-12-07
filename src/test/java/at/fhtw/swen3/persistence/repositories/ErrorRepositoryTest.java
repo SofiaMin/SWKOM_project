@@ -1,6 +1,6 @@
 package at.fhtw.swen3.persistence.repositories;
 
-import at.fhtw.swen3.persistence.entity.ErrorEntity;
+import at.fhtw.swen3.persistence.entities.ErrorEntity;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

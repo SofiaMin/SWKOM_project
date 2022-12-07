@@ -1,4 +1,4 @@
-package at.fhtw.swen3.persistence.entity;
+package at.fhtw.swen3.persistence.entities;
 
 import at.fhtw.swen3.services.dto.TrackingInformation;
 
@@ -36,10 +36,10 @@ public class ParcelEntity {
     private String trackingId;
     private TrackingInformation.StateEnum state;
     @OneToMany(mappedBy="fk_parcel")
-    @NotNull(message = "Visited Hops cannot be null.")
+    //@NotNull(message = "Visited Hops cannot be null.")
     private List<HopArrivalEntity> visitedHops = new ArrayList<>();
     @OneToMany(mappedBy="fk_parcel")
-    @NotNull(message = "Future hops cannot be null.")
+    //@NotNull(message = "Future hops cannot be null.")
     private List<HopArrivalEntity> futureHops = new ArrayList<>();
 
     /**

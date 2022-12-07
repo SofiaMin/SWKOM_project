@@ -1,8 +1,7 @@
-package at.fhtw.swen3.persistence.entity;
+package at.fhtw.swen3.persistence.entities;
 
 import javax.persistence.*;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,7 +18,7 @@ public class HopEntity {
     @Column(name = "id", nullable = false)
     private Long id;
     private String hopType;
-    @Pattern(regexp = "^[A-Za-zÄÖÜäöüß0-9\\s\\-]+$")
+    //@Pattern(regexp = "^[A-Za-zÄÖÜäöüß0-9\\s\\-]+$")
     private String code;
     private String description;
     private Integer processingDelayMins;

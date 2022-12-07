@@ -1,6 +1,6 @@
 package at.fhtw.swen3.services.impl;
 
-import at.fhtw.swen3.persistence.entity.ParcelEntity;
+import at.fhtw.swen3.persistence.entities.ParcelEntity;
 import at.fhtw.swen3.persistence.repositories.ParcelRepository;
 import at.fhtw.swen3.persistence.repositories.RecipientRepository;
 import at.fhtw.swen3.services.ParcelService;
@@ -9,7 +9,6 @@ import at.fhtw.swen3.services.mapper.ParcelMapper;
 import at.fhtw.swen3.services.validation.Validator;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
