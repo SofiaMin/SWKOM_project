@@ -1,21 +1,24 @@
-package at.fhtw.swen3.persistence.entity;
-
-import lombok.*;
+package at.fhtw.swen3.persistence.entities;
 
 import javax.persistence.*;
 
+import lombok.*;
+
 @Builder
 @Entity
-@Table(name = "geo_coordinate")
+@Table(name = "transferwarehouse")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class GeoCoordinateEntity {
+public class WarehouseNextHopsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
-    private Double lat;
-    private Double lon;
+
+    private Integer traveltimeMins;
+    @OneToOne
+    private HopEntity hopEntity;
 }
+
