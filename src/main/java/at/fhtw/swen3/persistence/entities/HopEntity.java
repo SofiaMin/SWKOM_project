@@ -1,8 +1,7 @@
-package at.fhtw.swen3.persistence.entity;
+package at.fhtw.swen3.persistence.entities;
 
 import javax.persistence.*;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
