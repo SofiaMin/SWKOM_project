@@ -35,6 +35,9 @@ public class OSMEncodingProxy implements GeoEncodingService {
         catch (IOException e){
             log.error(e.toString());
         }
+        finally {
+            httpClient.getConnectionManager().shutdown();
+        }
 
         if(results.isEmpty())
             return null;
