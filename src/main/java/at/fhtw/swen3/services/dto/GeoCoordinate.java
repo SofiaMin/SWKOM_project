@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 import javax.validation.constraints.*;
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
 
 
 import javax.annotation.Generated;
@@ -15,6 +16,7 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("geoCoordinate")
+@AllArgsConstructor
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-09-24T20:20:57.730918Z[Etc/UTC]")
 public class GeoCoordinate {
 
