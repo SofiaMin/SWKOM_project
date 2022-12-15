@@ -7,6 +7,7 @@ import at.fhtw.swen3.services.dto.NewParcelInfo;
 import at.fhtw.swen3.services.dto.Parcel;
 import at.fhtw.swen3.services.dto.TrackingInformation;
 import at.fhtw.swen3.services.mapper.ParcelMapper;
+import at.fhtw.swen3.services.mapper.TrackingInformationMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -64,7 +65,9 @@ public class ParcelApiController implements ParcelApi {
 
     @Override
     public ResponseEntity<TrackingInformation> trackParcel(String trackingId) {
-        return new ResponseEntity<>(HttpStatus.ACCEPTED);
+        ParcelEntity parcel = parcelService.findByTrackingId(trackingId);
+        TrackingInformation trackingInformation = TrackingInformationMapper.INSTANCE.entityToDto(parcel);
+        return ResponseEntity.ok(trackingInformation);
     }
 
     @Override

@@ -1,12 +1,15 @@
 package at.fhtw.swen3.services.impl;
 
+import at.fhtw.swen3.persistence.entities.HopArrivalEntity;
 import at.fhtw.swen3.persistence.entities.ParcelEntity;
 import at.fhtw.swen3.persistence.repositories.ParcelRepository;
 import at.fhtw.swen3.persistence.repositories.RecipientRepository;
 import at.fhtw.swen3.services.ParcelService;
 import at.fhtw.swen3.services.dto.Parcel;
+import at.fhtw.swen3.services.dto.TrackingInformation;
 import at.fhtw.swen3.services.mapper.ParcelMapper;
 import at.fhtw.swen3.services.validation.Validator;
+import at.fhtw.swen3.util.UUIDGenerator;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -19,12 +22,16 @@ public class ParcelServiceImpl implements ParcelService {
     private final Validator validator;
     private final RecipientRepository recipientRepository;
     private final ParcelRepository parcelRepository;
+    UUIDGenerator uuidGenerator;
 
     @Override
     public void submitNewParcel(ParcelEntity parcelEntity) {
         log.info("submitNewParcel() with parcel: " + parcelEntity);
+        parcelEntity.setTrackingId(uuidGenerator.generateUUID());
+        parcelEntity.setState(TrackingInformation.StateEnum.PICKUP);
+        parcelEntity.setVisitedHops(new ArrayList<HopArrivalEntity>());
+        parcelEntity.setFutureHops(new ArrayList<HopArrivalEntity>());
         this.validator.validate(parcelEntity);
-        parcelEntity.setTrackingId("PYJRB4HZ6");
         this.recipientRepository.save(parcelEntity.getSender());
         this.recipientRepository.save(parcelEntity.getRecipient());
         this.parcelRepository.save(parcelEntity);
@@ -51,5 +58,10 @@ public class ParcelServiceImpl implements ParcelService {
             parcelDtos.add(ParcelMapper.INSTANCE.entityToDto(parcelEntity));
         }
         return parcelDtos;
+    }
+    @Override
+    public ParcelEntity findByTrackingId(String id) {
+        log.info("get parcel with id " + id);
+        return parcelRepository.findByTrackingId(id);
     }
 }
