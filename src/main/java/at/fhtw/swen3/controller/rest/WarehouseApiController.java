@@ -35,7 +35,7 @@ public class WarehouseApiController implements WarehouseApi {
         this.warehouseService = warehouseService;
     }
 
-    @Override
+    /*@Override
     public Optional<NativeWebRequest> getRequest() {
         return Optional.ofNullable(request);
     }
@@ -79,5 +79,5 @@ public class WarehouseApiController implements WarehouseApi {
     @Override
     public ResponseEntity<Warehouse> exportWarehouses() {
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
-    }
+    }*/
 }
