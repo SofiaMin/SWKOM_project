@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cde4d186-eda9-48e0-967d-b20ddcb6fd4f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/configuration/KafkaProducerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/controller/rest/ExceptionHandlerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/controller/rest/PushController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/entities/SubscriptionEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/repositories/TruncateRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/repositories/WebhookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/TrackingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/WebhookManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/impl/TrackingServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/impl/WebhookManagerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/mapper/WarehouseMapperDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/util/exceptions/BLDataNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/util/exceptions/BLExceptionBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/util/exceptions/BLValidationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/at/fhtw/swen3/integration/IntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/at/fhtw/swen3/persistence/repositories/TruncateRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/at/fhtw/swen3/services/ParcelServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/at/fhtw/swen3/services/TrackingServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/at/fhtw/swen3/services/WarehouseServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/kleines_testwarehouse.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/build.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.openapi-generator/FILES" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.openapi-generator/VERSION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/configuration/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/configuration/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/controller/rest/ParcelApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/controller/rest/ParcelApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/controller/rest/WarehouseApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/controller/rest/WarehouseApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/gps/service/impl/OSMEncodingProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/gps/service/impl/OSMEncodingProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/entities/ErrorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/entities/ErrorEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/entities/GeoCoordinateEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/entities/GeoCoordinateEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/entities/HopArrivalEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/entities/HopArrivalEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/entities/HopEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/entities/HopEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/entities/ParcelEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/entities/ParcelEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/entities/RecipientEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/entities/RecipientEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/entities/TransferwarehouseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/entities/TransferwarehouseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/entities/TruckEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/entities/TruckEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/entities/WarehouseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/entities/WarehouseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/entities/WarehouseNextHopsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/entities/WarehouseNextHopsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/repositories/HopRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/repositories/HopRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/repositories/ParcelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/repositories/ParcelRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/repositories/RecipientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/repositories/RecipientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/repositories/TruckRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/repositories/TruckRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/repositories/WarehouseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/persistence/repositories/WarehouseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/ParcelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/ParcelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/WarehouseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/WarehouseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/impl/ParcelServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/impl/ParcelServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/impl/WarehouseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/impl/WarehouseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/mapper/HopMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/mapper/HopMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/mapper/HopMapperDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/mapper/HopMapperDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/mapper/ParcelMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/mapper/ParcelMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/mapper/WarehouseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/mapper/WarehouseMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/mapper/WarehouseNextHopsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/swen3/services/mapper/WarehouseNextHopsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/fhtw/swen3/gps/service/impl/OSMEncodingProxyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/fhtw/swen3/gps/service/impl/OSMEncodingProxyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/fhtw/swen3/persistence/repositories/ParcelRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/fhtw/swen3/persistence/repositories/ParcelRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/application-test.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application-test.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2KC39WtZHdnelwFJqlRzQMTt6OX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="OpenApiGeneratorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="openapi-spring" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="at.fhtw.swen3.OpenApiGeneratorApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cde4d186-eda9-48e0-967d-b20ddcb6fd4f" name="Changes" comment="" />
+      <created>1673464594686</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1673464594686</updated>
+      <workItem from="1673464598921" duration="1391000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="dev" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

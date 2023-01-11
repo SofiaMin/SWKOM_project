@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.github.filosganga:geogson-jts:1.1.100">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/filosganga/geogson-jts/1.1.100/geogson-jts-1.1.100.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/filosganga/geogson-jts/1.1.100/geogson-jts-1.1.100-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/filosganga/geogson-jts/1.1.100/geogson-jts-1.1.100-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,12 +1,13 @@
 package at.fhtw.swen3.services;
 
+import at.fhtw.swen3.services.dto.Hop;
 import at.fhtw.swen3.services.dto.Warehouse;
 
 import java.util.List;
 
 public interface WarehouseService {
-    public abstract List<Warehouse> getWarehouse();
-    public abstract void importWarehouses();
-    public abstract void exportWarehouse();
+    Hop getWarehouse(String code);
+    void importWarehouses(Warehouse warehouse);
+    Warehouse exportWarehouse();
 }
 

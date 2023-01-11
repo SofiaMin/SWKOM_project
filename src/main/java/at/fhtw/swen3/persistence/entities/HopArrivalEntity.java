@@ -3,6 +3,8 @@ package at.fhtw.swen3.persistence.entities;
 import javax.persistence.*;
 
 import lombok.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotNull;
@@ -18,7 +20,7 @@ import java.time.OffsetDateTime;
 @AllArgsConstructor
 public class HopArrivalEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
     @Pattern(regexp = "^[A-Za-zÄÖÜäöüß0-9\\s\\-]+$")
@@ -30,5 +32,7 @@ public class HopArrivalEntity {
     @ManyToOne
     @JoinColumn(name="fk_parcel")
     private ParcelEntity fk_parcel;
+    @Column(columnDefinition = "boolean default false")
+    private Boolean visited;
 }
 

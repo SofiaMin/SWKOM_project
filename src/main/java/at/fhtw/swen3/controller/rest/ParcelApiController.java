@@ -49,17 +49,19 @@ public class ParcelApiController implements ParcelApi {
     public ResponseEntity<NewParcelInfo> submitParcel(Parcel parcel) {
         // Map parcel to parcelEntity
         ParcelEntity parcelEntity = ParcelMapper.INSTANCE.dtoToEntity(parcel);
-        this.parcelService.submitNewParcel(parcelEntity);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        ParcelEntity response = this.parcelService.submitNewParcel(parcelEntity);
+        return new ResponseEntity<>(new NewParcelInfo().trackingId(response.getTrackingId()), HttpStatus.CREATED);
     }
 
     @Override
     public ResponseEntity<Void> reportParcelDelivery(String trackingId) {
+        parcelService.reportParcel(trackingId);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
     @Override
     public ResponseEntity<Void> reportParcelHop(String trackingId, String code) {
+        parcelService.updateParcel(trackingId, code);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
@@ -72,6 +74,8 @@ public class ParcelApiController implements ParcelApi {
 
     @Override
     public ResponseEntity<NewParcelInfo> transitionParcel(String trackingId, Parcel parcel) {
-        return new ResponseEntity<>(HttpStatus.ACCEPTED);
+        ParcelEntity parcelEntity = ParcelMapper.INSTANCE.dtoToEntity(parcel);
+        ParcelEntity response = parcelService.transferParcel(parcelEntity, trackingId);
+        return new ResponseEntity<>(new NewParcelInfo().trackingId(response.getTrackingId()), HttpStatus.ACCEPTED);
     }
 }

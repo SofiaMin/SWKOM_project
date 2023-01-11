@@ -6,9 +6,13 @@ import at.fhtw.swen3.services.dto.Parcel;
 import java.util.List;
 
 public interface ParcelService {
-    public abstract void submitNewParcel(ParcelEntity parcelEntity);
-    public abstract void updateParcel(String id, ParcelEntity parcelEntity);
-    public abstract void deleteParcel(String id);
-    public abstract List<Parcel> getParcels();
-    public abstract ParcelEntity findByTrackingId(String id);
+    ParcelEntity submitNewParcel(ParcelEntity parcelEntity);
+
+    ParcelEntity transferParcel(ParcelEntity parcelEntity, String trackingID);
+
+    void reportParcel(String trackingId);
+    void updateParcel(String id, String code);
+    void deleteParcel(String id);
+    List<Parcel> getParcels();
+    ParcelEntity findByTrackingId(String id);
 }

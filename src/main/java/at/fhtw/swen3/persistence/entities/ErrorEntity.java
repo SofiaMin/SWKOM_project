@@ -13,7 +13,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 public class ErrorEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
     private String errorMessage;

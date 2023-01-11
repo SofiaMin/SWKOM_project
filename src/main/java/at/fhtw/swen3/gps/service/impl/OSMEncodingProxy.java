@@ -8,6 +8,7 @@ import fr.dudie.nominatim.model.Address;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
@@ -15,8 +16,8 @@ import java.util.List;
 @Slf4j
 public class OSMEncodingProxy implements GeoEncodingService {
 
-    private NominatimClient nominatimClient;
-    private HttpClient httpClient;
+    private final NominatimClient nominatimClient;
+    private final HttpClient httpClient;
 
     public OSMEncodingProxy(){
         this.httpClient = new DefaultHttpClient();
@@ -35,11 +36,8 @@ public class OSMEncodingProxy implements GeoEncodingService {
         catch (IOException e){
             log.error(e.toString());
         }
-        finally {
-            httpClient.getConnectionManager().shutdown();
-        }
 
-        if(results.isEmpty())
+        if(results != null && results.isEmpty())
             return null;
 
         return new GeoCoordinate(results.get(0).getLatitude(), results.get(0).getLongitude());
