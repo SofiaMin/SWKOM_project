@@ -9,4 +9,5 @@ import java.util.Optional;
 @Repository
 public interface HopRepository extends JpaRepository<HopEntity, Long> {
     Optional<HopEntity> findById(Long id);
+    Optional<HopEntity> findByCode(String code);
 }

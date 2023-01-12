@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lombok.*;
+import org.hibernate.annotations.Where;
 
 @Builder
 @Entity
@@ -19,26 +20,26 @@ import lombok.*;
 @AllArgsConstructor
 public class ParcelEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
     @DecimalMin(value = "0.0", message = "Minimum weight should be greater than 0.0")
     private float weight;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "recipient_id", referencedColumnName = "id")
-    @NotNull(message = "Recipient cannot be null.")
     private RecipientEntity recipient;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "sender_id", referencedColumnName = "id")
-    @NotNull(message = "Sender cannot be null.")
     private RecipientEntity sender;
     @Pattern(regexp = "^[A-Z0-9]{9}$")
     private String trackingId;
     private TrackingInformation.StateEnum state;
-    @OneToMany(mappedBy="fk_parcel")
+    @OneToMany(mappedBy="fk_parcel", cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    @Where(clause = "visited = true")
     @NotNull(message = "Visited Hops cannot be null.")
     private List<HopArrivalEntity> visitedHops = new ArrayList<>();
-    @OneToMany(mappedBy="fk_parcel")
+    @OneToMany(mappedBy="fk_parcel", cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    @Where(clause = "visited = false")
     @NotNull(message = "Future hops cannot be null.")
     private List<HopArrivalEntity> futureHops = new ArrayList<>();
 

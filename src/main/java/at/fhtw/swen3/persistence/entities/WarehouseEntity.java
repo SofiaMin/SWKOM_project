@@ -15,11 +15,11 @@ import javax.persistence.*;
 @Setter
 public class WarehouseEntity extends HopEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
     private Integer level;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private List<WarehouseNextHopsEntity> nextHops = new ArrayList<>();
 }
 

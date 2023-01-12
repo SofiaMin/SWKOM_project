@@ -23,8 +23,8 @@ class OSMEncodingProxyTest {
     }
 
     @Test
-    void encodeAddress() throws IOException {
+    void encodeAddress() {
 
-        assertEquals(osmEncoding.encodeAddress(a),new GeoCoordinate(48.2083537,16.3725042));
+        assertEquals(osmEncoding.encodeAddress(a), new GeoCoordinate(48.2083537,16.3725042));
     }
 }

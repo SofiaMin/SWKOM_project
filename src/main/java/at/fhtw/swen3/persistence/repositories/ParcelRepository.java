@@ -11,6 +11,6 @@ import java.util.Optional;
 @Repository
 public interface ParcelRepository extends JpaRepository<ParcelEntity, Long> {
     Optional<ParcelEntity> findById(Long id);
-    ParcelEntity findByTrackingId(String trackingId);
+    Optional<ParcelEntity> findByTrackingId(String trackingId);
     List<ParcelEntity> findBySender(RecipientEntity sender);
 }

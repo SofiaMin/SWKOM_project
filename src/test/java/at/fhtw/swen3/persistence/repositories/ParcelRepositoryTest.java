@@ -17,6 +17,9 @@ class ParcelRepositoryTest {
     @Autowired
     private ParcelRepository repo;
 
+    @Autowired
+    private RecipientRepository repository;
+
     private static ParcelEntity parcelEntity;
 
     @BeforeAll
@@ -34,6 +37,8 @@ class ParcelRepositoryTest {
 
     @Test
     void saveParcelEntity() {
+        repository.save(parcelEntity.getRecipient());
+        repository.save(parcelEntity.getSender());
         ParcelEntity parcel = repo.save(parcelEntity);
         assertNotNull(parcel.getId());
         assertEquals(parcel.getWeight(), parcelEntity.getWeight());
